@@ -194,7 +194,8 @@ plot(aggMeanStepsByInterval,
 <pre class="r"><code>activityFull &lt;- activityData 
 for (i in 1:nrow(activityFull)) {
     if (is.na(activityFull$steps[i])) {
-        activityFull$steps[i] &lt;- aggMeanStepsByInterval[which(activityFull$interval[i] == aggMeanStepsByInterval$interval), ]$steps
+        activityFull$steps[i] &lt;- aggMeanStepsByInterval[which(activityFull$interval[i] == 
+                                aggMeanStepsByInterval$interval), ]$steps
     }
 }
 sum(is.na(activityFull$steps))</code></pre>

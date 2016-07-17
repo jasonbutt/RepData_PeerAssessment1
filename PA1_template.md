@@ -135,7 +135,8 @@ in the step column with the mean of steps for the 05 minute interval.
 activityFull <- activityData 
 for (i in 1:nrow(activityFull)) {
     if (is.na(activityFull$steps[i])) {
-        activityFull$steps[i] <- aggMeanStepsByInterval[which(activityFull$interval[i] == aggMeanStepsByInterval$interval), ]$steps
+        activityFull$steps[i] <- aggMeanStepsByInterval[which(activityFull$interval[i] == 
+                                aggMeanStepsByInterval$interval), ]$steps
     }
 }
 sum(is.na(activityFull$steps))
